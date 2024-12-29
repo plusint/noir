@@ -121,8 +121,8 @@
       // Add size and intensity tracking
       let currentSize = 100;
       let targetSize = 100; // Start with same as current
-      let currentIntensity = 0.02;
-      let targetIntensity = 0.02; // Start with same as current
+      let currentIntensity = 0.04;
+      let targetIntensity = 0.04; // Start with same as current
       let isMoving = false;
       let moveTimeout;
       let hasInteracted = false; // New flag to track first interaction
@@ -171,14 +171,14 @@
 
         isMoving = true;
         targetSize = 180;
-        targetIntensity = 0.05;
+        targetIntensity = 0.08;
 
         clearTimeout(moveTimeout);
 
         moveTimeout = setTimeout(() => {
           isMoving = false;
           targetSize = 100;
-          targetIntensity = 0.02;
+          targetIntensity = 0.06;
         }, 100);
       });
 
