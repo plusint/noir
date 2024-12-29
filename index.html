@@ -1,41 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Noir - A sophisticated speakeasy bar in Orlando, Florida. Experience craft cocktails in an elegant atmosphere.">
-    <meta name="keywords" content="Noir, speakeasy, bar, Orlando, Florida, craft cocktails, upscale bar, thai bar, talay orlando">
-    <meta property="og:title" content="Noir Bar Orlando">
-    <meta property="og:description" content="A sophisticated speakeasy bar in Orlando, Florida.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <title>Noir Bar Orlando</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: "Cormorant Garamond", "Playfair Display", "Bodoni MT", "Didot", serif;
-        }
-        @keyframes colorTransition {
-            0% { color: #f5f5f5; } /* Start with white */
-            30% { color: #D4AF37; } /* Transition to gold */
-            70% { color: #D4AF37; } /* Hold gold */
-            100% { color: #f5f5f5; } /* Back to white */
-        }
-        
-        .coming-soon {
-            font-size: 2rem;
-            letter-spacing: 0.1em;
-            animation: colorTransition 5s infinite ease-in-out;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Noir - A sophisticated speakeasy bar in Orlando, Florida. Experience craft cocktails in an elegant atmosphere.">
+  <meta name="keywords"
+    content="Noir, speakeasy, bar, Orlando, Florida, craft cocktails, upscale bar, thai bar, talay orlando">
+  <meta property="og:title" content="Noir Bar Orlando">
+  <meta property="og:description" content="A sophisticated speakeasy bar in Orlando, Florida.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <title>Noir Bar Orlando</title>
+  <style>
+    :root {
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #000000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pattern-container {
+      width: 100%;
+      height: 100vh;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cstyle%3E.gold-stroke %7B stroke: %23DAA520; fill: none; stroke-width: 1.5; %7D%3C/style%3E%3Cpath class='gold-stroke' d='M0 100 Q 50 100 50 50 Q 50 0 100 0'/%3E%3Cpath class='gold-stroke' d='M0 100 Q 50 100 50 150 Q 50 200 100 200'/%3E%3Cpath class='gold-stroke' d='M200 100 Q 150 100 150 50 Q 150 0 100 0'/%3E%3Cpath class='gold-stroke' d='M200 100 Q 150 100 150 150 Q 150 200 100 200'/%3E%3Cpath class='gold-stroke' d='M100 0 Q 75 25 75 50 Q 75 75 100 100'/%3E%3Cpath class='gold-stroke' d='M100 0 Q 125 25 125 50 Q 125 75 100 100'/%3E%3Cpath class='gold-stroke' d='M100 200 Q 75 175 75 150 Q 75 125 100 100'/%3E%3Cpath class='gold-stroke' d='M100 200 Q 125 175 125 150 Q 125 125 100 100'/%3E%3C/svg%3E");
+      background-size: 100px 100px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .darkness-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle 200px at var(--mouse-x) var(--mouse-y),
+        transparent,
+        #000000 100%
+      );
+      pointer-events: none;
+      mix-blend-mode: darken;
+      transform: translate(0, 0);
+      will-change: transform;
+    }
+
+    .light-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle 180px at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.05),
+        transparent 100%
+      );
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transform: translate(0, 0);
+      will-change: transform;
+    }
+
+    /* Create a subtle glow effect for the text */
+    .text-light {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle 180px at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.35),
+        transparent 100%
+      );
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transform: translate(0, 0);
+      will-change: transform;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cormorant Garamond' font-size='64' fill='white' style='text-transform: uppercase; letter-spacing: 0.5em;'%3ECOMING SOON%3C/text%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cormorant Garamond' font-size='64' fill='white' style='text-transform: uppercase; letter-spacing: 0.5em;'%3ECOMING SOON%3C/text%3E%3C/svg%3E");
+      mask-size: 100% 100%;
+      -webkit-mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-position: center;
+    }
+  </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const pattern = document.querySelector('.pattern-container');
+    pattern.style.opacity = '1';
+
+    let rafId = null;
+
+    document.addEventListener('mousemove', (e) => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+
+      rafId = requestAnimationFrame(() => {
+        document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+        document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+      });
+    });
+
+    document.documentElement.style.setProperty('--mouse-x', '50%');
+    document.documentElement.style.setProperty('--mouse-y', '50%');
+  });
+</script>
 </head>
+
 <body>
-    <div class="coming-soon">Coming soon...</div>
+  <div class="pattern-container"></div>
+  <div class="darkness-overlay"></div>
+  <div class="light-effect"></div>
+  <div class="text-light"></div>
 </body>
 </html>
