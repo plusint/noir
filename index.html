@@ -118,38 +118,77 @@
       let targetX = currentX;
       let targetY = currentY;
 
-      // Helper function for smooth interpolation
+      // Add size and intensity tracking
+      let currentSize = 100;
+      let targetSize = 100; // Start with same as current
+      let currentIntensity = 0.02;
+      let targetIntensity = 0.02; // Start with same as current
+      let isMoving = false;
+      let moveTimeout;
+      let hasInteracted = false; // New flag to track first interaction
+
       function lerp(start, end, factor) {
         return start + (end - start) * factor;
       }
 
-      // Animation loop for smooth movement
+      function updateLightProperties(x, y, size, intensity) {
+        document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+
+        const darkness = document.querySelector('.darkness-overlay');
+        const light = document.querySelector('.light-effect');
+        const textLight = document.querySelector('.text-light');
+
+        darkness.style.background = `radial-gradient(circle ${size + 20}px at ${x}px ${y}px, transparent, #000000 100%)`;
+        light.style.background = `radial-gradient(circle ${size}px at ${x}px ${y}px, rgba(255, 255, 255, ${intensity}), transparent 100%)`;
+        textLight.style.background = `radial-gradient(circle ${size}px at ${x}px ${y}px, rgba(255, 255, 255, ${intensity * 7}), transparent 100%)`;
+      }
+
       function animate() {
-        // Adjust this value to change the amount of lag (0.1 = more lag, 0.5 = less lag)
-        const lagFactor = 0.1;
+        const positionLagFactor = 0.1;
+        const sizeLagFactor = 0.05;
+        const intensityLagFactor = 0.05;
 
-        currentX = lerp(currentX, targetX, lagFactor);
-        currentY = lerp(currentY, targetY, lagFactor);
+        currentX = lerp(currentX, targetX, positionLagFactor);
+        currentY = lerp(currentY, targetY, positionLagFactor);
 
-        document.documentElement.style.setProperty('--mouse-x', `${currentX}px`);
-        document.documentElement.style.setProperty('--mouse-y', `${currentY}px`);
+        // Only interpolate size/intensity if there's been interaction
+        if (hasInteracted) {
+          currentSize = lerp(currentSize, targetSize, sizeLagFactor);
+          currentIntensity = lerp(currentIntensity, targetIntensity, intensityLagFactor);
+        }
+
+        updateLightProperties(currentX, currentY, currentSize, currentIntensity);
 
         requestAnimationFrame(animate);
       }
 
-      // Update target position on pointer move
       document.addEventListener('pointermove', (e) => {
         e.preventDefault();
+        hasInteracted = true; // Set flag on first interaction
         targetX = e.clientX;
         targetY = e.clientY;
+
+        isMoving = true;
+        targetSize = 180;
+        targetIntensity = 0.05;
+
+        clearTimeout(moveTimeout);
+
+        moveTimeout = setTimeout(() => {
+          isMoving = false;
+          targetSize = 100;
+          targetIntensity = 0.02;
+        }, 100);
       });
 
-      // Handle touch movement
       document.addEventListener('touchmove', (e) => {
         e.preventDefault();
       }, { passive: false });
 
-      // Start the animation loop
+      // Set initial state with fixed values (no interpolation)
+      updateLightProperties(currentX, currentY, currentSize, currentIntensity);
+
       animate();
     });
   </script>
