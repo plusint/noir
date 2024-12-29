@@ -93,9 +93,24 @@
 
     /* Media Queries for Mobile Devices */
     @media screen and (max-width: 768px) {
+      .darkness-overlay {
+        background: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y),
+            transparent,
+            #000000 100%);
+      }
+
+      .light-effect {
+        background: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.05),
+            transparent 100%);
+      }
+
       .text-light {
         mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cormorant Garamond' font-size='32' fill='white' style='text-transform: uppercase; letter-spacing: 0.3em;'%3ECOMING SOON%3C/text%3E%3C/svg%3E");
         -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cormorant Garamond' font-size='32' fill='white' style='text-transform: uppercase; letter-spacing: 0.3em;'%3ECOMING SOON%3C/text%3E%3C/svg%3E");
+        background: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.35),
+            transparent 100%);
       }
     }
 
@@ -112,15 +127,20 @@
       const pattern = document.querySelector('.pattern-container');
       pattern.style.opacity = '1';
 
+      const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
       // Initialize current and target positions
       let currentX = window.innerWidth / 2;
       let currentY = window.innerHeight;
       let targetX = currentX;
       let targetY = currentY;
 
+      const defaultSize = isMobile() ? 60 : 100;
+      const activeSize = isMobile() ? 100 : 180;
+
       // Add size and intensity tracking
-      let currentSize = 100;
-      let targetSize = 100; // Start with same as current
+      let currentSize = defaultSize;
+      let targetSize = defaultSize; // Start with same as current
       let currentIntensity = 0.04;
       let targetIntensity = 0.04; // Start with same as current
       let isMoving = false;
@@ -170,14 +190,14 @@
         targetY = e.clientY;
 
         isMoving = true;
-        targetSize = 180;
+        targetSize = activeSize;
         targetIntensity = 0.08;
 
         clearTimeout(moveTimeout);
 
         moveTimeout = setTimeout(() => {
           isMoving = false;
-          targetSize = 100;
+          targetSize = defaultSize;
           targetIntensity = 0.06;
         }, 100);
       });
