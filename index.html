@@ -67,7 +67,6 @@
       will-change: transform;
     }
 
-    /* Create a subtle glow effect for the text */
     .text-light {
       position: fixed;
       top: 0;
@@ -91,7 +90,6 @@
       -webkit-mask-position: center;
     }
 
-    /* Media Queries for Mobile Devices */
     @media screen and (max-width: 768px) {
       .darkness-overlay {
         background: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y),
@@ -114,7 +112,6 @@
       }
     }
 
-    /* Additional breakpoint for very small devices */
     @media screen and (max-width: 380px) {
       .text-light {
         mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cormorant Garamond' font-size='30' fill='white' style='text-transform: uppercase; letter-spacing: 0.2em;'%3ECOMING SOON%3C/text%3E%3C/svg%3E");
@@ -206,7 +203,6 @@
         e.preventDefault();
       }, { passive: false });
 
-      // Set initial state with fixed values (no interpolation)
       updateLightProperties(currentX, currentY, currentSize, currentIntensity);
 
       animate();
