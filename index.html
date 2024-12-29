@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Noir - A sophisticated speakeasy bar in Orlando, Florida. Experience craft cocktails in an elegant atmosphere.">
-  <meta name="keywords" content="Noir, speakeasy, bar, Orlando, Florida, craft cocktails, upscale bar, thai bar, talay orlando">
+  <meta name="description"
+    content="Noir - A sophisticated speakeasy bar in Orlando, Florida. Experience craft cocktails in an elegant atmosphere.">
+  <meta name="keywords"
+    content="Noir, speakeasy, bar, Orlando, Florida, craft cocktails, upscale bar, thai bar, talay orlando">
   <meta property="og:title" content="Noir Bar Orlando">
   <meta property="og:description" content="A sophisticated speakeasy bar in Orlando, Florida.">
   <meta property="og:type" content="website">
@@ -110,34 +112,45 @@
       const pattern = document.querySelector('.pattern-container');
       pattern.style.opacity = '1';
 
-      let rafId = null;
+      // Initialize current and target positions
+      let currentX = window.innerWidth / 2;
+      let currentY = window.innerHeight;
+      let targetX = currentX;
+      let targetY = currentY;
 
-      // Helper function to update the light position
-      const updateLightPosition = (x, y) => {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
+      // Helper function for smooth interpolation
+      function lerp(start, end, factor) {
+        return start + (end - start) * factor;
+      }
 
-        rafId = requestAnimationFrame(() => {
-          document.documentElement.style.setProperty('--mouse-x', `${x}px`);
-          document.documentElement.style.setProperty('--mouse-y', `${y}px`);
-        });
-      };
+      // Animation loop for smooth movement
+      function animate() {
+        // Adjust this value to change the amount of lag (0.1 = more lag, 0.5 = less lag)
+        const lagFactor = 0.1;
 
-      // Use pointermove instead of mousemove
+        currentX = lerp(currentX, targetX, lagFactor);
+        currentY = lerp(currentY, targetY, lagFactor);
+
+        document.documentElement.style.setProperty('--mouse-x', `${currentX}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${currentY}px`);
+
+        requestAnimationFrame(animate);
+      }
+
+      // Update target position on pointer move
       document.addEventListener('pointermove', (e) => {
-        // prevent default to avoid any scrolling/dragging behaviors
         e.preventDefault();
-        updateLightPosition(e.clientX, e.clientY);
+        targetX = e.clientX;
+        targetY = e.clientY;
       });
 
-      // Handle touch dragging better by preventing default touch behaviors
+      // Handle touch movement
       document.addEventListener('touchmove', (e) => {
         e.preventDefault();
       }, { passive: false });
 
-      // Set initial position
-      updateLightPosition(window.innerWidth / 2, window.innerHeight);
+      // Start the animation loop
+      animate();
     });
   </script>
 </head>
