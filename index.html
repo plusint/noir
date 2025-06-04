@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Noir | Speakeasy Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando</title>
+    <meta name="title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta name="description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
+    <meta name="keywords" content="cocktail bar, speakeasy, downtown Orlando, craft cocktails, Thai tapas, art deco bar, hidden bar, upscale lounge, cocktail lounge Orlando">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thenoirbar.com/">
+    <meta property="og:title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta property="og:description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thenoirbar.com/">
+    <meta property="twitter:title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta property="twitter:description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Noir",
+        "description": "Intimate speakeasy and cocktail lounge featuring craft cocktails and Thai-inspired tapas in an art deco setting",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Orlando",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+        },
+        "servesCuisine": ["Cocktails", "Thai"],
+        "priceRange": "$$$"
+    }
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #000000;
+            font-family: 'Georgia', serif;
+            color: #DAA520;
+        }
+        
+        .pattern-container {
+            width: 100%;
+            height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cstyle%3E.gold-stroke %7B stroke: %23DAA520; fill: none; stroke-width: 1.5; %7D%3C/style%3E%3Cpath class='gold-stroke' d='M0 100 Q 50 100 50 50 Q 50 0 100 0'/%3E%3Cpath class='gold-stroke' d='M0 100 Q 50 100 50 150 Q 50 200 100 200'/%3E%3Cpath class='gold-stroke' d='M200 100 Q 150 100 150 50 Q 150 0 100 0'/%3E%3Cpath class='gold-stroke' d='M200 100 Q 150 100 150 150 Q 150 200 100 200'/%3E%3Cpath class='gold-stroke' d='M100 0 Q 75 25 75 50 Q 75 75 100 100'/%3E%3Cpath class='gold-stroke' d='M100 0 Q 125 25 125 50 Q 125 75 100 100'/%3E%3Cpath class='gold-stroke' d='M100 200 Q 75 175 75 150 Q 75 125 100 100'/%3E%3Cpath class='gold-stroke' d='M100 200 Q 125 175 125 150 Q 125 125 100 100'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern-container" id="pattern"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('pattern').style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
