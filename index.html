@@ -6,20 +6,20 @@
     
     <!-- Primary Meta Tags -->
     <title>Noir | Speakeasy Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando</title>
-    <meta name="title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta name="title" content="Noir | Speakeasy Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
     <meta name="description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
     <meta name="keywords" content="cocktail bar, speakeasy, downtown Orlando, craft cocktails, Thai tapas, art deco bar, hidden bar, upscale lounge, cocktail lounge Orlando">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thenoirbar.com/">
-    <meta property="og:title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta property="og:title" content="Noir | Speakeasy Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
     <meta property="og:description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thenoirbar.com/">
-    <meta property="twitter:title" content="Noir Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
+    <meta property="twitter:title" content="Noir | Speakeasy Bar & Lounge | Craft Cocktails & Thai Tapas | Downtown Orlando">
     <meta property="twitter:description" content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
     
     <!-- Local Business Schema -->
@@ -35,8 +35,9 @@
             "addressRegion": "FL",
             "addressCountry": "US"
         },
+        "url": "https://thenoirbar.com/",
         "servesCuisine": ["Cocktails", "Thai"],
-        "priceRange": "$$$"
+        "priceRange": "$$"
     }
     </script>
     
@@ -48,6 +49,7 @@
             background-color: #000000;
             font-family: 'Georgia', serif;
             color: #DAA520;
+            line-height: 1.6;
         }
         
         .pattern-container {
@@ -62,11 +64,330 @@
             left: 0;
             z-index: -1;
         }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin: 2em 0 1em 0;
+            text-align: center;
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 0.5em;
+        }
+        
+        .menu-section {
+            margin-bottom: 3em;
+        }
+        
+        .drink-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+        }
+        
+        .drink-info {
+            flex: 1;
+        }
+        
+        .drink-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 0.3em;
+        }
+        
+        .drink-description {
+            font-size: 0.9em;
+            color: rgba(218, 165, 32, 0.8);
+            font-style: italic;
+        }
+        
+        .drink-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
     <div class="pattern-container" id="pattern"></div>
+    
+    <div class="content">
+        <h1>Noir</h1>
+        
+        <div class="menu-section">
+            <h2>Signature Cocktails</h2>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Cherubim</div>
+                    <div class="drink-description">Chrysanthemum Dry Vermouth, liquor, Strega, Benedictine (DOM), Egg-free Foamer</div>
+                </div>
+                <div class="drink-price">$17</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Adam & Eve</div>
+                    <div class="drink-description">Gin, Baileys, Grand Manier, Pandan, Matcha, Coconut Roll</div>
+                </div>
+                <div class="drink-price">$17</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Divine Presence</div>
+                    <div class="drink-description">Jasmine Infuse Whisky, Coconut Jasmine Demerara Syrup, Gold Leaf</div>
+                </div>
+                <div class="drink-price">$18</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Genesis</div>
+                    <div class="drink-description">White Rum, Malibu, Rum Chata, Thai Tea</div>
+                </div>
+                <div class="drink-price">$17</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Original Sin</div>
+                    <div class="drink-description">Hendrick's Flora Adora, Blanc Vermouth, Suze, Lavender</div>
+                </div>
+                <div class="drink-price">$17</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Flaming Sword</div>
+                    <div class="drink-description">St. Germain, La Marca Prosecco, Aperol Caviar, Seltzer</div>
+                </div>
+                <div class="drink-price">$16</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Tree of Life</div>
+                    <div class="drink-description">Pandan Infuse Tequila Anejo, Padan infused Mezcal, Coconut Jasmine Demerara Syrup, Chocolate</div>
+                </div>
+                <div class="drink-price">$16</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Forbidden Fruit</div>
+                    <div class="drink-description">Vodka, Rose Syrup, Lychee, Lime, Egg-free foamer</div>
+                </div>
+                <div class="drink-price">$16</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Fall of man</div>
+                    <div class="drink-description">Sesame Infused Cognac, FAIR Café Liqueur, Cold Brew, Vanilla Syrup, Egg-free Foamer</div>
+                </div>
+                <div class="drink-price">$18</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Presumed Innocent</div>
+                    <div class="drink-description">Gin, Cointreau, Honey Citron Tea, Brown Sugar, Lemon, Egg-free Foamer</div>
+                </div>
+                <div class="drink-price">$16</div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>Wine</h2>
+            
+            <h3>White</h3>
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Riesling</div>
+                    <div class="drink-description">Rheingau / Germany / august kesseler</div>
+                </div>
+                <div class="drink-price">14/56</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Pinot Grigio</div>
+                    <div class="drink-description">Podravje / Slovenia / Pullus</div>
+                </div>
+                <div class="drink-price">14/56</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Chenin Blanc</div>
+                    <div class="drink-description">Western Cape / South Africa / Lievland Vineyards</div>
+                </div>
+                <div class="drink-price">15/60</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Sauvignon Blanc</div>
+                    <div class="drink-description">Marlborough / New Zealand / Mohua</div>
+                </div>
+                <div class="drink-price">15/60</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Chardonnay</div>
+                    <div class="drink-description">Russian River Valley / California / Raeburn Winery</div>
+                </div>
+                <div class="drink-price">16/64</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Chardonnay</div>
+                    <div class="drink-description">Mendoza / Argentina / Catena Alta</div>
+                </div>
+                <div class="drink-price">98</div>
+            </div>
+            
+            <h3>Red</h3>
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Pinot Noir</div>
+                    <div class="drink-description">Sonoma Coast / California / Meiomi</div>
+                </div>
+                <div class="drink-price">16/64</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Pinot Noir</div>
+                    <div class="drink-description">Willamette Valley / Oregon / Portlandia</div>
+                </div>
+                <div class="drink-price">15/60</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Malbec</div>
+                    <div class="drink-description">Valle de Uco, Mendoza / Argentina / TintoNero</div>
+                </div>
+                <div class="drink-price">14/56</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Red Blend</div>
+                    <div class="drink-description">California / United States / Locations</div>
+                </div>
+                <div class="drink-price">15/60</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Cabernet Sauvignon</div>
+                    <div class="drink-description">Napa Valley / California / Franciscan Estate</div>
+                </div>
+                <div class="drink-price">13/52</div>
+            </div>
+            
+            <h3>Orange</h3>
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Havžan Orange</div>
+                    <div class="drink-description">Podravje / Slovenia / Pullus</div>
+                </div>
+                <div class="drink-price">14/87</div>
+            </div>
+            
+            <h3>Rosé</h3>
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Rosé "Štajerski Žametovka"</div>
+                    <div class="drink-description">Štajerska / Slovenia / Pullus</div>
+                </div>
+                <div class="drink-price">14/52</div>
+            </div>
+            
+            <h3>Sparkling</h3>
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Prosecco</div>
+                    <div class="drink-description">Veneto / Italy / La Marca</div>
+                </div>
+                <div class="drink-price">13/53</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Sparkling Rosé "Drop of Sunshine"</div>
+                    <div class="drink-description">California / United States / Drop of Sunshine</div>
+                </div>
+                <div class="drink-price">13/52</div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>Draft Beer</h2>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Singha</div>
+                    <div class="drink-description">Lager / Thailand / 5%</div>
+                </div>
+                <div class="drink-price">$8</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Allagash White</div>
+                    <div class="drink-description">Wheat Ale / Portland, Maine / 5.2%</div>
+                </div>
+                <div class="drink-price">$8</div>
+            </div>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Gulf Stream Graphic</div>
+                    <div class="drink-description">IPA / Fort Lauderdale, Florida / 7%</div>
+                </div>
+                <div class="drink-price">$9</div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>Non-Alcoholic Beer</h2>
+            
+            <div class="drink-item">
+                <div class="drink-info">
+                    <div class="drink-name">Heineken 0.0</div>
+                    <div class="drink-description">Lager / Amsterdam, Netherlands / 0%</div>
+                </div>
+                <div class="drink-price">$5</div>
+            </div>
+        </div>
+    </div>
+    
     <script>
+        // Fade in the pattern when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('pattern').style.opacity = '1';
         });
