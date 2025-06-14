@@ -28,7 +28,6 @@
   <meta property="twitter:description"
     content="Discover Noir, an intimate speakeasy and cocktail lounge in downtown Orlando. Featuring expertly crafted cocktails, Thai-inspired tapas, and art deco ambiance in a hidden, upscale setting.">
 
-  <!-- Local Business Schema -->
   <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -140,9 +139,32 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
+    .logo-container {
+      text-align: center;
+      margin: 1.5rem auto 2rem;
+      max-width: 80%;
+      padding: 0 1rem;
+    }
+    
+    .logo {
+      max-width: 100%;
+      height: auto;
+      max-height: 600px;
+      width: auto;
+      display: block;
+      margin: -6rem auto 0 auto;
+    }
+
     .contact-section {
       text-align: center;
       margin-bottom: 3em;
+      margin-top: -5rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        margin-top: -3rem;
+      }
     }
 
     .contact-label {
@@ -159,10 +181,9 @@
     }
 
     .contact-details a {
-      color: inherit;
+      color: #fff;
       text-decoration: none;
       transition: color 0.3s ease;
-      border-radius: 2px;
     }
 
     .contact-details a:hover,
@@ -246,7 +267,9 @@
 
   <main id="main-content" class="content">
     <header class="fade-in">
-      <h1>Noir</h1>
+      <div class="logo-container">
+        <img src="logo.png" alt="Noir" class="logo">
+      </div>
 
       <div class="contact-section fade-in fade-in-delay-1">
         <div class="contact-label">events and inquiries</div>
